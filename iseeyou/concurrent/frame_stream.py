@@ -1,12 +1,12 @@
 import time
 from threading import Lock
 
-class FrameStream:
+class FrameStreamListener:
     def __init__(self):
         self.stream = []
         self.lock = Lock()
 
-    def append(self, captured_frame):
+    def publish(self, captured_frame):
         with self.lock:
             self.stream.append(captured_frame)
 
