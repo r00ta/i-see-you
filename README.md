@@ -1,5 +1,7 @@
 # i-see-you
 
+[![Build Status](https://dev.azure.com/jacopor00ta/iseeyou/_apis/build/status/r00ta.i-see-you?branchName=master)](https://dev.azure.com/jacopor00ta/iseeyou/_build/latest?definitionId=1&branchName=master)
+
 Install a camera on your car, calculate safety distance from cars and detect dangerous situations, see your data on a dashboard. 
 
 Given that i-see-you would not be fair if the driver would not learn anything, you can install a monitor in your car and see if you are keeping the safety distance between you and the car in front of you.
