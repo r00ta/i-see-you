@@ -1,2 +1,14 @@
 # i-see-you
-Install a camera on your car, edge computing of your risk and see your data on a dashboard. Install a monitor on the car to see what is the safe distance you should keep from the car in front of you (if you want to learn).
+
+Install a camera on your car, edge computing of your risk and see your data on a dashboard. 
+
+Given that i-see-you would not be fair if the driver would not learn anything, you can install a monitor in your car and see if you are keeping the safety distance between you and the car in front of you.
+
+The version 1.0 would be ready when: 
+
+1) the module can process images and measure what is the distance between the car and the car in front of. 
+2) display the distance on the screen and show if the driver is keeping the safety distance. 
+3) upload the data somewhere for data collection and debugging for a dashboard?
+
+iseeyou makes drivers more conscious.
+ 

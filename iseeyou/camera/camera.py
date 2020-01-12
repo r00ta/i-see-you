@@ -9,12 +9,13 @@ import cv2
 import logging
 
 class Camera:
-    def __init__(self, cancellation_token, event_listeners = []):
+    def __init__(self, cancellation_token, event_listeners, path_to_image_dir):
         self.event_listeners = event_listeners
         self.cancellation_token = cancellation_token
+        self.path_to_image_dir = path_to_image_dir
         self.camera = PiCamera()
         self.camera.resolution = (640, 480)
-        self.camera.framerate = 32
+        self.camera.framerate = 4 
         self.raw_capture = PiRGBArray(self.camera, size = (640, 480))
         self.logger = logging.getLogger(__name__)
 
@@ -26,7 +27,7 @@ class Camera:
 
     def start_recording(self, session_name, display_video = True):
         self.logger.info("Start recording camera frames is starting.")
-        thread = Thread(target=self._record, args=[display_video])
+        thread = Thread(target=self._record, args=[session_name, display_video])
         # thread.daemon = True
         thread.start()
         self.logger.info("Frame recording thread started.")
@@ -35,7 +36,7 @@ class Camera:
     def stop_recording(self):
         self.cancellation_token.set(False)
 
-    def _record(self, display_video = True):
+    def _record(self, session_name, display_video = True):
         time.sleep(0.1) # warm up
         for frame in self.camera.capture_continuous(self.raw_capture, format = "bgr", use_video_port = display_video):
             image = frame.array
@@ -43,6 +44,7 @@ class Camera:
                 listener.publish(CapturedFrame(image, time.time()))
             if display_video:
                 cv2.imshow("Frame", image)
+            cv2.imwrite(self.path_to_image_dir + str(int(time.time() * 1000)) + '.jpg', image) 
             cv2.waitKey(1) & 0xFF
             self.raw_capture.truncate(0)
 
