@@ -130,3 +130,6 @@ dmypy.json
 
 #logs
 logs/
+
+# don't upload my appsettings
+appsettings.json
