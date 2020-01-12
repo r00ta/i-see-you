@@ -1,6 +1,6 @@
 # i-see-you
 
-Install a camera on your car, edge computing of your risk and see your data on a dashboard. 
+Install a camera on your car, calculate safety distance from cars and detect dangerous situations, see your data on a dashboard. 
 
 Given that i-see-you would not be fair if the driver would not learn anything, you can install a monitor in your car and see if you are keeping the safety distance between you and the car in front of you.
 
